@@ -3,8 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 require("dotenv").config();
 const port = (process.env.PORT) || 5000;
-
 const authRoute = require("./routes/auth");
+const profile = require("./routes/profile");
 
 mongoose
   .connect(process.env.DB_CONNECT)
@@ -19,3 +19,4 @@ mongoose
 
 app.use(express.json());
 app.use('/api/user', authRoute);
+app.use('/api/profile', profile);
