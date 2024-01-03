@@ -16,7 +16,6 @@ mongoose
     console.error("Error connecting to DB:", error);
   });
 
-
 app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/profile', profile);
